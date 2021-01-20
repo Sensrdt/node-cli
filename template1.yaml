@@ -1,0 +1,20 @@
+
+            apiVersion: v1
+            kind: ConfigMap
+            metadata:
+            name: argocd-cm # do not change
+            namespace: tools
+            labels:
+                app.kubernetes.io/name: argocd-cm
+                app.kubernetes.io/part-of: argocd
+            data:
+            repositories: |
+                # this has it's own credentials
+                - url: {{ ArtDirGitURL }}
+                passwordSecret:
+                    name: {{ AppName }}-repo-secret
+                    key: password
+                usernameSecret:
+                    name: {{ AppName }}-repo-secret
+                    key: username
+                `

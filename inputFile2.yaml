@@ -1,0 +1,5 @@
+data:
+    ArtDirGitURL: https://google.com
+    App:
+        User: foo
+        Name: bar
